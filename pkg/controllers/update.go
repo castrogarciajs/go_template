@@ -34,4 +34,5 @@ func Update(w http.ResponseWriter, r *http.Request) {
 		username.Email = email
 	}
 
+	utils.Templates.ExecuteTemplate(w, "Update", username)
 }
