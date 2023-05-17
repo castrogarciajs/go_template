@@ -36,3 +36,23 @@ func Update(w http.ResponseWriter, r *http.Request) {
 
 	utils.Templates.ExecuteTemplate(w, "Update", username)
 }
+
+func UPDATE(w http.ResponseWriter, r *http.Request) {
+
+	conn := database.MySQL()
+
+	if r.Method == "POST" {
+		id := r.FormValue("id")
+		name := r.FormValue("username")
+		email := r.FormValue("email")
+
+		insert, err := conn.Prepare("UPDATE gomi SET name = ? , email = ? WHERE id = ?")
+
+		if err != nil {
+			panic(err.Error())
+		}
+
+		insert.Exec(name, email, id)
+		http.Redirect(w, r, "/", http.StatusMovedPermanently)
+	}
+}
