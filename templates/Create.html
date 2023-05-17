@@ -1,14 +1,21 @@
 {{ define "Create" }} {{ template "Header" }}
 
-<form>
-  <label for="username">
-    <input type="text" name="username" placeholder="Username" />
-  </label>
-  <label for="email">
-    <input type="email" name="email" placeholder="Email" />
-  </label>
+<form class="card-body">
+  <div class="mb-3">
+    <label for="username" class="form-label"></label>
+    <input
+      type="text"
+      class="form-control"
+      name="username"
+      placeholder="Username"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="email"> </label>
+    <input type="email" class="form-control" name="email" placeholder="Email" />
+  </div>
 
-  <button type="submit">Guardar</button>
+  <button type="submit" class="btn btn-success">Guardar</button>
 </form>
 
 {{ template "Footer" }} {{ end }}
