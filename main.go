@@ -6,7 +6,7 @@ import (
 
 	"github.com/sebastian009w/go_template/pkg/controllers"
 )
-
+// vscode globals
 func main() {
 
 	http.HandleFunc("/", controllers.Init)
