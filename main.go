@@ -12,6 +12,9 @@ func main() {
 	http.HandleFunc("/", controllers.Init)
 	http.HandleFunc("/create", controllers.Create)
 
+	// URL method POST
+	http.HandleFunc("/insert", controllers.Insert)
+
 	log.Println("http://localhost:8080")
 
 	http.ListenAndServe(":8080", nil)
