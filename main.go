@@ -1,22 +1,17 @@
 package main
 
 import (
-	"html/template"
 	"log"
 	"net/http"
-)
 
-var templates = template.Must(template.ParseGlob("templates/*"))
+	"github.com/sebastian009w/go_template/pkg/controllers"
+)
 
 func main() {
 
-	http.HandleFunc("/", Init)
+	http.HandleFunc("/", controllers.Init)
 
 	log.Println("http://localhost:8080")
 
 	http.ListenAndServe(":8080", nil)
-}
-
-func Init(w http.ResponseWriter, r *http.Request) {
-	templates.ExecuteTemplate(w, "index", nil)
 }
