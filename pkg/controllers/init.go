@@ -7,19 +7,13 @@ import (
 	"github.com/sebastian009w/go_template/pkg/utils"
 )
 
-type Username struct {
-	ID    int
-	Name  string
-	Email string
-}
-
 func Init(w http.ResponseWriter, r *http.Request) {
 	conn := database.MySQL()
 
 	array, err := conn.Query("SELECT * FROM gomi")
 
-	username := Username{}
-	arrayUsername := []Username{}
+	username := utils.Username{}
+	arrayUsername := []utils.Username{}
 
 	for array.Next() {
 		var id int
