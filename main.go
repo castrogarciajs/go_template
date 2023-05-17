@@ -14,6 +14,7 @@ func main() {
 
 	// URL method POST
 	http.HandleFunc("/insert", controllers.Insert)
+	http.HandleFunc("/delete", controllers.Delete)
 
 	log.Println("http://localhost:8080")
 

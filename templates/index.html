@@ -16,8 +16,12 @@
       <td>{{.Name}}</td>
       <td>{{.Email}}</td>
       <td>
-        <button class="btn btn-danger">DELETE</button>
-        <button class="btn btn-primary">UPDATE</button>
+        <a class="btn btn-danger" role="button" href="/delete?id={{.ID}}"
+          >DELETE</a
+        >
+        <a class="btn btn-primary" role="button" href="/update?id={{.ID}}"
+          >UPDATE</a
+        >
       </td>
     </tr>
     {{ end }}
