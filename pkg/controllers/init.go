@@ -34,6 +34,7 @@ func Init(w http.ResponseWriter, r *http.Request) {
 		username.Name = name
 		username.Email = email
 
+		arrayUsername = append(arrayUsername, username)
 	}
 	if err != nil {
 		panic(err.Error())
