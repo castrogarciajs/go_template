@@ -1,0 +1,14 @@
+{{ define "Create" }} {{ template "Header" }}
+
+<form>
+  <label for="username">
+    <input type="text" name="username" placeholder="Username" />
+  </label>
+  <label for="email">
+    <input type="email" name="email" placeholder="Email" />
+  </label>
+
+  <button type="submit">Guardar</button>
+</form>
+
+{{ template "Footer" }} {{ end }}
