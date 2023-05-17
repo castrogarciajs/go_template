@@ -16,5 +16,5 @@ func Delete(w http.ResponseWriter, r *http.Request) {
 	}
 
 	delete.Exec(ID)
-	http.Redirect(w, r, "/", http.StatusNoContent)
+	http.Redirect(w, r, "/", http.StatusMovedPermanently)
 }
