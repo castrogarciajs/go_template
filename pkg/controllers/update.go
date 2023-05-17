@@ -11,7 +11,7 @@ func Update(w http.ResponseWriter, r *http.Request) {
 	conn := database.MySQL()
 	ID := r.URL.Query().Get("id")
 
-	array, err := conn.Query("SELECT * FROM gomi WHERE id = ?", ID)
+	obj, err := conn.Query("SELECT * FROM gomi WHERE id = ?", ID)
 
 	if err != nil {
 		panic(err.Error())
@@ -19,11 +19,11 @@ func Update(w http.ResponseWriter, r *http.Request) {
 
 	username := utils.Username{}
 
-	for array.Next() {
+	for obj.Next() {
 		var id int
 		var name, email string
 
-		err = array.Scan(&id, &name, &email)
+		err = obj.Scan(&id, &name, &email)
 
 		if err != nil {
 			panic(err.Error())
