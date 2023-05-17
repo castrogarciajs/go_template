@@ -25,7 +25,7 @@ func Insert(w http.ResponseWriter, r *http.Request) {
 		}
 		create.Exec(name, email)
 
-		http.Redirect(w, r, "/", 301)
+		http.Redirect(w, r, "/", http.StatusMovedPermanently)
 	}
 
 }
