@@ -1,7 +1,8 @@
-package app
+package database
 
 import (
 	"database/sql"
+	"fmt"
 
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -12,7 +13,8 @@ func MySQL() (conn *sql.DB) {
 	Password := "sebastian123_*"
 	Name := "mygo"
 
-	conn, err := sql.Open(Driver, Username+":"+Password+Name)
+	connStr := fmt.Sprintf("%s:%s@/%s", Username, Password, Name)
+	conn, err := sql.Open(Driver, connStr)
 
 	if err != nil {
 		panic(err.Error())
