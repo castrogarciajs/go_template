@@ -10,6 +10,7 @@ import (
 func main() {
 
 	http.HandleFunc("/", controllers.Init)
+	http.HandleFunc("/create", controllers.Create)
 
 	log.Println("http://localhost:8080")
 
