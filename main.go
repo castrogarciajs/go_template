@@ -1,10 +1,12 @@
 package main
 
 import (
-	"fmt"
+	"html/template"
 	"log"
 	"net/http"
 )
+
+var templates = template.Must(template.ParseGlob("templates/*"))
 
 func main() {
 
@@ -16,5 +18,5 @@ func main() {
 }
 
 func Init(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello world")
+	templates.ExecuteTemplate(w, "index", nil)
 }
