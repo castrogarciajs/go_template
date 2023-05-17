@@ -12,10 +12,12 @@ func main() {
 
 	http.HandleFunc("/", controllers.Init)
 	http.HandleFunc("/create", controllers.Create)
+	http.HandleFunc("/update", controllers.Update)
 
 	// URL method POST
 	http.HandleFunc("/insert", controllers.Insert)
 	http.HandleFunc("/delete", controllers.Delete)
+	http.HandleFunc("/up", controllers.UPDATE)
 
 	log.Println("http://localhost:8080")
 

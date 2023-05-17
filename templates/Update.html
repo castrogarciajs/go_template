@@ -1,0 +1,29 @@
+{{ define "Update" }} {{ template "Header" }}
+
+<form class="card-body" method="POST" action="/up">
+  <input type="hidden" name="id" value="{{.ID}}" />
+  <div class="mb-3">
+    <label for="username" class="form-label"></label>
+    <input
+      type="text"
+      class="form-control"
+      name="username"
+      value="{{.Name}}"
+      placeholder="Username"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="email"> </label>
+    <input
+      type="email"
+      class="form-control"
+      name="email"
+      value="{{.Email}}"
+      placeholder="Email"
+    />
+  </div>
+
+  <button type="submit" class="btn btn-success">UPDATE</button>
+</form>
+
+{{ template "Footer" }} {{ end }}
