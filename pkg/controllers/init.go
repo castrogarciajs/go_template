@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/sebastian009w/go_template/app/database"
@@ -16,7 +17,7 @@ type Username struct {
 func Init(w http.ResponseWriter, r *http.Request) {
 	conn := database.MySQL()
 
-	array, err := conn.Query("SELECT * FROM migo;")
+	array, err := conn.Query("SELECT * FROM gomi")
 
 	username := Username{}
 	arrayUsername := []Username{}
@@ -36,6 +37,8 @@ func Init(w http.ResponseWriter, r *http.Request) {
 
 		arrayUsername = append(arrayUsername, username)
 	}
+	fmt.Println(arrayUsername)
+
 	if err != nil {
 		panic(err.Error())
 	}
