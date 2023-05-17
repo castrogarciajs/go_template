@@ -12,7 +12,7 @@ func main() {
 	http.HandleFunc("/", controllers.Init)
 	http.HandleFunc("/create", controllers.Create)
 
-	// URL method POST
+	// URL method POST --changes locals
 	http.HandleFunc("/insert", controllers.Insert)
 	http.HandleFunc("/delete", controllers.Delete)
 
