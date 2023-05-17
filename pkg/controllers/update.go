@@ -6,5 +6,9 @@ import (
 )
 
 func Update(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Hello world")
+
+	ID := r.URL.Query().Get("id")
+
+	fmt.Println(ID)
+
 }
