@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/sebastian009w/go_template/app/database"
@@ -37,12 +36,11 @@ func Init(w http.ResponseWriter, r *http.Request) {
 
 		arrayUsername = append(arrayUsername, username)
 	}
-	fmt.Println(arrayUsername)
 
 	if err != nil {
 		panic(err.Error())
 	}
 
-	utils.Templates.ExecuteTemplate(w, "index", nil)
+	utils.Templates.ExecuteTemplate(w, "index", arrayUsername)
 
 }
